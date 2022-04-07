@@ -11,9 +11,12 @@
 ## Примеры работы
 
 ![image](https://user-images.githubusercontent.com/68964770/162308268-bb07c6e6-e2cc-46ee-8599-0ff7f905aaf8.png)
+
 если опечатка в запросе:
 ![image](https://user-images.githubusercontent.com/68964770/162308347-58fdbb04-493d-4dfb-ab08-a676f10f8b6d.png)
+
 ![image](https://user-images.githubusercontent.com/68964770/162308428-8d50ef11-bdd6-4d8d-8899-774fc506ac8e.png)
+
 пример с выдачей вводимых ранее:
 ![image](https://user-images.githubusercontent.com/68964770/162308560-a6b4e3bf-1d80-477c-bc5b-88a90b2d9690.png)
 
