@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class Request {
     private String request;
-    private Integer relevace;
+    private Double relevace;
 
     public static Comparator<Request> comparator = new Comparator<Request>() {
         @Override
@@ -13,7 +13,7 @@ public class Request {
         }
     };
 
-    public Request(String request, Integer relevace) {
+    public Request(String request, Double relevace) {
         this.request = request;
         this.relevace = relevace;
     }
@@ -26,11 +26,11 @@ public class Request {
         this.request = request;
     }
 
-    public Integer getRelevace() {
+    public Double getRelevace() {
         return relevace;
     }
 
-    public void setRelevace(Integer relevace) {
+    public void setRelevace(Double relevace) {
         this.relevace = relevace;
     }
 }

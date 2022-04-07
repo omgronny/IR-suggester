@@ -25,16 +25,12 @@ public class DataSet {
             }
         }
 
-        userRequests.add(new Request(request, 1));
+        userRequests.add(new Request(request, 1d));
     }
 
-    public static void insertGeneral(String request, Integer relevance) {
+    public static void insertGeneral(String request, Double relevance) {
         requests.add(new Request(request, relevance));
     }
 
-//    public static void update(String request) {
-//        Integer relevance = requests
-//        requests.put(request, relevance + 1);
-//    }
 
 }

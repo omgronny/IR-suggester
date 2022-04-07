@@ -17,26 +17,18 @@ import java.util.Arrays;
 public class JaroWinkler {
 
     private static final double DEFAULT_THRESHOLD = 0.7;
-    private static final int THREE = 3;
     private static final double JW_COEF = 0.1;
     private final double threshold;
-
 
     public JaroWinkler() {
         this.threshold = DEFAULT_THRESHOLD;
     }
 
-
-    public JaroWinkler(final double threshold) {
-        this.threshold = threshold;
+    public double distance(final String s1, final String s2) {
+        return 1.0 - similarity(s1, s2);
     }
 
-
-    public final double getThreshold() {
-        return threshold;
-    }
-
-    public final double similarity(final String s1, final String s2) {
+    private double similarity(final String s1, final String s2) {
         if (s1 == null) {
             throw new NullPointerException("s1 must not be null");
         }
@@ -55,19 +47,14 @@ public class JaroWinkler {
             return 0f;
         }
         double j = ((m / s1.length() + m / s2.length() + (m - mtp[1]) / m))
-                / THREE;
+                / 3;
         double jw = j;
 
-        if (j > getThreshold()) {
-            jw = j + Math.min(JW_COEF, 1.0 / mtp[THREE]) * mtp[2] * (1 - j);
+        if (j > threshold) {
+            jw = j + Math.min(JW_COEF, 1.0 / mtp[3]) * mtp[2] * (1 - j);
         }
 
         return jw;
-    }
-
-
-    public final double distance(final String s1, final String s2) {
-        return 1.0 - similarity(s1, s2);
     }
 
     private int[] matches(final String s1, final String s2) {

@@ -1,10 +1,7 @@
 package similarity;
 
-import requests.Request;
-
 import java.util.HashSet;
 import java.util.Set;
-import java.util.SortedSet;
 
 public class Dictionary {
 
@@ -33,7 +30,7 @@ public class Dictionary {
                 minDist = currentDist;
                 result = s;
 
-                if (minDist <= 0.1) {
+                if (minDist <= 0.05) {
                     return result;
                 }
 

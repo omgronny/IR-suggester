@@ -1,11 +1,8 @@
-package requests;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import requests.DataSet;
 import similarity.*;
 
 public class DataSetReader {
@@ -16,9 +13,18 @@ public class DataSetReader {
 
         String line;
         while ((line = br.readLine()) != null) {
+
             String[] values = line.split(",");
-            DataSet.insertGeneral(values[0], Integer.parseInt(values[1]));
-            Dictionary.insert(values[0]);
+            if (values.length > 1) {
+                DataSet.insertGeneral(values[0], Double.parseDouble(values[1]));
+            } else {
+                DataSet.insertGeneral(values[0], 0d);
+            }
+
+            for (String s : values[0].split(" ")) {
+                Dictionary.insert(s);
+            }
+
         }
 
     }
